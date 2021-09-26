@@ -16,12 +16,17 @@ fetch("https://restcountries.com/v3/all")
         {
             console.log(coun_json[temp])
 
+            var div1=document.createElement("div")
+            div1.setAttribute("class","col-lg-4 col-sm-12 card")
+            div.appendChild(div1)
+
             var div2=document.createElement("div")
-            div2.setAttribute("class","col-lg-4 col-sm-12 card")
+            //div2.setAttribute("class","col-lg-4 col-sm-12 card")
             div2.setAttribute("id",temp)
+            div2.setAttribute("style","margin:10px")
             div2.setAttribute("style","border:1px solid")
             div2.style.backgroundColor="#70F3FE"
-            div.appendChild(div2)
+            div1.appendChild(div2)
 
             var divhead=document.createElement("div")
             divhead.setAttribute("class","card-header text-center")
