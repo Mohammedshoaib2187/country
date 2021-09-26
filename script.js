@@ -9,6 +9,7 @@ fetch("https://restcountries.com/v3/all")
     {
         var div=document.createElement("div")
         div.setAttribute("class","row")
+        div.style.backgroundColor="rgb(255, 253, 134)"
         
         
         
@@ -18,6 +19,7 @@ fetch("https://restcountries.com/v3/all")
 
             var div1=document.createElement("div")
             div1.setAttribute("class","col-lg-4 col-sm-12 card")
+            div1.style.backgroundColor="rgb(255, 253, 134)"
             div.appendChild(div1)
 
             var div2=document.createElement("div")
@@ -157,6 +159,7 @@ function weather(val)
             return data.json()
         })
         .then(function(data2){
+            console.log(data2)
             var temp=document.createElement("h3")
             temp.style.fontSize="18px"
             temp.style.marginTop="20px"
@@ -170,6 +173,13 @@ function weather(val)
             temp2.style.marginBottom="0px"
             temp2.innerHTML="<b>Humidity : </b>"+data2.main.humidity+"&ensp; g/<span>&#13221;</span>"
             divbody.appendChild(temp2)
+
+            var wear=document.createElement("h3")
+            wear.style.fontSize="18px"
+            wear.style.marginTop="20px"
+            wear.style.marginBottom="0px"
+            wear.innerHTML="<b>Weather : </b>"+data2.weather[0].description+""
+            divbody.appendChild(wear)
             
             var break1=document.createElement("br")
         divbody.appendChild(break1)
