@@ -180,6 +180,7 @@ function weather(val)
             divspan.setAttribute("id","span")
             divspan.setAttribute("class","text-center")
             divspan.setAttribute("style","border:1px solid;background-color:red;padding:5px;border-radius:5px;")
+            divspan.style.cursor="pointer"
             divspan.innerHTML="Close"
             divbody.appendChild(divspan)
 
