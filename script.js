@@ -1,10 +1,3 @@
-const cards = document.querySelectorAll(".cards__single");
-
-function flipCard() {
-  this.classList.toggle("flip");
-}
-cards.forEach((card) => card.addEventListener("click", flipCard));
-
 fetch("https://restcountries.com/v3/all")
 .then(function(coun_data){
     return coun_data.json()
@@ -172,6 +165,26 @@ function weather(val)
             temp2.style.marginBottom="0px"
             temp2.innerHTML="<b>Humidity : </b>"+data2.main.humidity+"&ensp; g/<span>&#13221;</span>"
             divbody.appendChild(temp2)
+            
+            var break1=document.createElement("br")
+        divbody.appendChild(break1)
+
+            // var divclose=document.createElement("div")
+            // divclose.setAttribute("style","border:1px solid;width:100px;")
+            // divclose.setAttribute("class","text-center")
+            // divclose.style.backgroundColor="red"
+
+            // divbody.appendChild(divclose)            
+
+            var divspan=document.createElement("span")
+            divspan.setAttribute("id","span")
+            divspan.setAttribute("class","text-center")
+            divspan.setAttribute("style","border:1px solid;background-color:red;padding:5px;border-radius:5px;")
+            divspan.innerHTML="Close"
+            divbody.appendChild(divspan)
+
+            var break1=document.createElement("br")
+        divbody.appendChild(break1)
 
         })
         .catch(function(error){
@@ -190,6 +203,8 @@ function weather(val)
         }
 
         divbody.appendChild(cap)
+
+        
         
 
         document.body.appendChild(div)
